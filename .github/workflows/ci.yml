@@ -12,3 +12,11 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npx cypress run --browser chrome
+      - run: npm run report:merge
+      - run: npm run report:generate
+      - name: Upload Mochawesome Report
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: mochawesome-report
+          path: cypress/reports/
