@@ -11,6 +11,13 @@ module.exports = defineConfig({
     video: false,
     screenshotOnRunFailure: true,
     specPattern: ["cypress/e2e/**/*.cy.js", "cypress/features/**/*.feature"],
+    reporter: "mochawesome",
+    reporterOptions: {
+      reportDir: "cypress/reports",
+      overwrite: false,
+      html: false,
+      json: true,
+    },
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
       on("file:preprocessor", createBundler({

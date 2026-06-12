@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-12T06:00:57.533Z",
+    "end": "2026-06-12T06:01:07.862Z",
+    "duration": 10329,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cb27fab3-13b9-4fce-9b8f-feb63f6abfd2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\product\\product.cy.js",
+      "file": "cypress\\e2e\\product\\product.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "47aedb3f-4ba4-4c01-96a2-dc109cc94ffa",
+          "title": "Product Module",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-009 | Should display products on inventory page",
+              "fullTitle": "Product Module TC-009 | Should display products on inventory page",
+              "timedOut": null,
+              "duration": 3031,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.getProductItems().should(\"have.length\", 6);",
+              "err": {},
+              "uuid": "b795b0ff-8fd1-4779-bc0d-3b33cccfa7f0",
+              "parentUUID": "47aedb3f-4ba4-4c01-96a2-dc109cc94ffa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-010 | Should display product name and price",
+              "fullTitle": "Product Module TC-010 | Should display product name and price",
+              "timedOut": null,
+              "duration": 1420,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.getProductNames().first().should(\"be.visible\");\nproductsPage.getProductPrices().first().should(\"be.visible\");",
+              "err": {},
+              "uuid": "7e6ec5ec-6ddd-41cd-b315-cc98451f1b71",
+              "parentUUID": "47aedb3f-4ba4-4c01-96a2-dc109cc94ffa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-011 | Should sort products by price low to high",
+              "fullTitle": "Product Module TC-011 | Should sort products by price low to high",
+              "timedOut": null,
+              "duration": 1386,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.sortProducts(\"lohi\");\nproductsPage.getProductPrices().then(($prices) => {\n  const prices = [...$prices].map((el) => parseFloat(el.innerText.replace(\"$\", \"\")));\n  expect(prices[0]).to.be.lessThan(prices[prices.length - 1]);\n});",
+              "err": {},
+              "uuid": "a43efe21-02a3-4d2b-9fa6-b006afaaa594",
+              "parentUUID": "47aedb3f-4ba4-4c01-96a2-dc109cc94ffa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-012 | Should sort products by name A to Z",
+              "fullTitle": "Product Module TC-012 | Should sort products by name A to Z",
+              "timedOut": null,
+              "duration": 1265,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.sortProducts(\"az\");\nproductsPage.getProductNames().first().should(\"contain\", \"Sauce Labs Backpack\");",
+              "err": {},
+              "uuid": "3c9d8f0c-04e6-4b21-9b29-9922dbe1cff6",
+              "parentUUID": "47aedb3f-4ba4-4c01-96a2-dc109cc94ffa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-013 | Should open product detail page",
+              "fullTitle": "Product Module TC-013 | Should open product detail page",
+              "timedOut": null,
+              "duration": 1445,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.getProductNames().first().click();\ncy.url().should(\"include\", \"/inventory-item\");\ncy.get(\".inventory_details_name\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "e0f60a75-b55b-4e43-827d-cf5e57874a85",
+              "parentUUID": "47aedb3f-4ba4-4c01-96a2-dc109cc94ffa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-014 | Should add product to cart from detail page",
+              "fullTitle": "Product Module TC-014 | Should add product to cart from detail page",
+              "timedOut": null,
+              "duration": 1414,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.getProductNames().first().click();\ncy.get(\".btn_inventory\").click();\nproductsPage.getCartCount().should(\"contain\", \"1\");",
+              "err": {},
+              "uuid": "e98c427b-f616-4d3b-aea7-e829d9c92c5d",
+              "parentUUID": "47aedb3f-4ba4-4c01-96a2-dc109cc94ffa",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b795b0ff-8fd1-4779-bc0d-3b33cccfa7f0",
+            "7e6ec5ec-6ddd-41cd-b315-cc98451f1b71",
+            "a43efe21-02a3-4d2b-9fa6-b006afaaa594",
+            "3c9d8f0c-04e6-4b21-9b29-9922dbe1cff6",
+            "e0f60a75-b55b-4e43-827d-cf5e57874a85",
+            "e98c427b-f616-4d3b-aea7-e829d9c92c5d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9961,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

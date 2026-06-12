@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-12T06:01:12.369Z",
+    "end": "2026-06-12T06:01:28.462Z",
+    "duration": 16093,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7581ddd7-4dc2-483b-8110-40a79753d8e6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\checkout\\checkout.cy.js",
+      "file": "cypress\\e2e\\checkout\\checkout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b26e2933-f816-489b-9fa4-6ca7cc02de11",
+          "title": "Checkout Module",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-021 | Should complete checkout successfully",
+              "fullTitle": "Checkout Module TC-021 | Should complete checkout successfully",
+              "timedOut": null,
+              "duration": 3478,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "checkoutPage.enterFirstName(\"Shivam\");\ncheckoutPage.enterLastName(\"Raj\");\ncheckoutPage.enterPostalCode(\"160001\");\ncheckoutPage.clickContinue();\ncheckoutPage.clickFinish();\ncheckoutPage.getOrderConfirmation().should(\"contain\", \"Thank you\");",
+              "err": {},
+              "uuid": "c013bd59-8b61-42c7-9384-9267a95cc550",
+              "parentUUID": "b26e2933-f816-489b-9fa4-6ca7cc02de11",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-022 | Should show error with empty first name",
+              "fullTitle": "Checkout Module TC-022 | Should show error with empty first name",
+              "timedOut": null,
+              "duration": 2719,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "checkoutPage.enterLastName(\"Raj\");\ncheckoutPage.enterPostalCode(\"160001\");\ncheckoutPage.clickContinue();\ncheckoutPage.getErrorMessage().should(\"contain\", \"First Name is required\");",
+              "err": {},
+              "uuid": "692a7ebe-7cba-4f16-a113-9209d0ef6443",
+              "parentUUID": "b26e2933-f816-489b-9fa4-6ca7cc02de11",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-023 | Should show error with empty last name",
+              "fullTitle": "Checkout Module TC-023 | Should show error with empty last name",
+              "timedOut": null,
+              "duration": 2216,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "checkoutPage.enterFirstName(\"Shivam\");\ncheckoutPage.enterPostalCode(\"160001\");\ncheckoutPage.clickContinue();\ncheckoutPage.getErrorMessage().should(\"contain\", \"Last Name is required\");",
+              "err": {},
+              "uuid": "2381237d-55c1-4e28-ac8e-48b93aa882a4",
+              "parentUUID": "b26e2933-f816-489b-9fa4-6ca7cc02de11",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-024 | Should show error with empty postal code",
+              "fullTitle": "Checkout Module TC-024 | Should show error with empty postal code",
+              "timedOut": null,
+              "duration": 2309,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "checkoutPage.enterFirstName(\"Shivam\");\ncheckoutPage.enterLastName(\"Raj\");\ncheckoutPage.clickContinue();\ncheckoutPage.getErrorMessage().should(\"contain\", \"Postal Code is required\");",
+              "err": {},
+              "uuid": "22794130-977f-48db-aca2-ef2255a5171a",
+              "parentUUID": "b26e2933-f816-489b-9fa4-6ca7cc02de11",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-025 | Should display order summary before finishing",
+              "fullTitle": "Checkout Module TC-025 | Should display order summary before finishing",
+              "timedOut": null,
+              "duration": 2531,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "checkoutPage.enterFirstName(\"Shivam\");\ncheckoutPage.enterLastName(\"Raj\");\ncheckoutPage.enterPostalCode(\"160001\");\ncheckoutPage.clickContinue();\ncy.get(\".summary_info\").should(\"be.visible\");\ncy.get(\".summary_total_label\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "4c9b4df3-4e87-4953-9025-b3f36a0ccc3c",
+              "parentUUID": "b26e2933-f816-489b-9fa4-6ca7cc02de11",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-026 | Should show correct item in order summary",
+              "fullTitle": "Checkout Module TC-026 | Should show correct item in order summary",
+              "timedOut": null,
+              "duration": 2495,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "checkoutPage.enterFirstName(\"Shivam\");\ncheckoutPage.enterLastName(\"Raj\");\ncheckoutPage.enterPostalCode(\"160001\");\ncheckoutPage.clickContinue();\ncy.get(\".cart_item\").should(\"have.length\", 1);",
+              "err": {},
+              "uuid": "20fb3e4c-b8b2-4df6-a44d-ab51e3b67714",
+              "parentUUID": "b26e2933-f816-489b-9fa4-6ca7cc02de11",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c013bd59-8b61-42c7-9384-9267a95cc550",
+            "692a7ebe-7cba-4f16-a113-9209d0ef6443",
+            "2381237d-55c1-4e28-ac8e-48b93aa882a4",
+            "22794130-977f-48db-aca2-ef2255a5171a",
+            "4c9b4df3-4e87-4953-9025-b3f36a0ccc3c",
+            "20fb3e4c-b8b2-4df6-a44d-ab51e3b67714"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15748,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

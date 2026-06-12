@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-12T06:00:43.920Z",
+    "end": "2026-06-12T06:00:53.512Z",
+    "duration": 9592,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1b8bce3b-5124-4b7b-b683-59ed39b424db",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cart\\cart.cy.js",
+      "file": "cypress\\e2e\\cart\\cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "de72e4e4-87b1-4c98-ac8f-0c2d3fbf0284",
+          "title": "Cart Module",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-015 | Should add single product to cart",
+              "fullTitle": "Cart Module TC-015 | Should add single product to cart",
+              "timedOut": null,
+              "duration": 2129,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.addFirstItemToCart();\nproductsPage.getCartCount().should(\"contain\", \"1\");",
+              "err": {},
+              "uuid": "d5de9858-86bb-4dd0-9378-975117b43c2b",
+              "parentUUID": "de72e4e4-87b1-4c98-ac8f-0c2d3fbf0284",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-016 | Should add multiple products to cart",
+              "fullTitle": "Cart Module TC-016 | Should add multiple products to cart",
+              "timedOut": null,
+              "duration": 1846,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".btn_inventory\").eq(0).click();\ncy.get(\".btn_inventory\").eq(1).click();\nproductsPage.getCartCount().should(\"contain\", \"2\");",
+              "err": {},
+              "uuid": "de15794c-bdef-448f-81b7-dbe2894e6bea",
+              "parentUUID": "de72e4e4-87b1-4c98-ac8f-0c2d3fbf0284",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-017 | Should remove product from cart",
+              "fullTitle": "Cart Module TC-017 | Should remove product from cart",
+              "timedOut": null,
+              "duration": 1412,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.addFirstItemToCart();\nproductsPage.openCart();\ncartPage.removeFirstItem();\ncartPage.getCartItems().should(\"have.length\", 0);",
+              "err": {},
+              "uuid": "80141f05-cdee-42cd-ad7f-03f13c06ebea",
+              "parentUUID": "de72e4e4-87b1-4c98-ac8f-0c2d3fbf0284",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-018 | Should show correct product in cart",
+              "fullTitle": "Cart Module TC-018 | Should show correct product in cart",
+              "timedOut": null,
+              "duration": 1258,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.addFirstItemToCart();\nproductsPage.openCart();\ncartPage.getCartItems().should(\"have.length\", 1);",
+              "err": {},
+              "uuid": "7658f95d-ced8-4b26-a612-8b8bccf10a60",
+              "parentUUID": "de72e4e4-87b1-4c98-ac8f-0c2d3fbf0284",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-019 | Should continue shopping from cart",
+              "fullTitle": "Cart Module TC-019 | Should continue shopping from cart",
+              "timedOut": null,
+              "duration": 1457,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.addFirstItemToCart();\nproductsPage.openCart();\ncartPage.continueShopping();\ncy.url().should(\"include\", \"/inventory\");",
+              "err": {},
+              "uuid": "67086faa-08eb-4484-85bb-a604f2cf837b",
+              "parentUUID": "de72e4e4-87b1-4c98-ac8f-0c2d3fbf0284",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-020 | Should cart be empty initially",
+              "fullTitle": "Cart Module TC-020 | Should cart be empty initially",
+              "timedOut": null,
+              "duration": 1224,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "productsPage.openCart();\ncy.get(\".cart_item\").should(\"not.exist\");",
+              "err": {},
+              "uuid": "7d987c83-edca-4571-9464-700af37aaf68",
+              "parentUUID": "de72e4e4-87b1-4c98-ac8f-0c2d3fbf0284",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d5de9858-86bb-4dd0-9378-975117b43c2b",
+            "de15794c-bdef-448f-81b7-dbe2894e6bea",
+            "80141f05-cdee-42cd-ad7f-03f13c06ebea",
+            "7658f95d-ced8-4b26-a612-8b8bccf10a60",
+            "67086faa-08eb-4484-85bb-a604f2cf837b",
+            "7d987c83-edca-4571-9464-700af37aaf68"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9326,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
