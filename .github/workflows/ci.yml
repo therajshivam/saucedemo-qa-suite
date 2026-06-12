@@ -15,7 +15,7 @@ jobs:
       - run: npm run report:merge
       - run: npm run report:generate
       - name: Upload Mochawesome Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: mochawesome-report
